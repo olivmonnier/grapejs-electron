@@ -2,3 +2,8 @@ html, body {
   margin: 0;
   height: 100%;
 }
+
+#gjs-pn-devices-c {
+  left: calc(50% - 150px);
+  padding: 4px;
+}
