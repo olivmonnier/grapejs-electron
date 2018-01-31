@@ -9,6 +9,8 @@ function addBlock(editor, block) {
 }
 
 function addBlocksByFilePath(editor, filePath) {
+  if (!filePath) return
+
   const blocksParsed = readFileAndParse(filePath)
 
   if (blocksParsed.hasOwnProperty('blocks')) {
@@ -24,7 +26,9 @@ export default function(editor, config = {}) {
   Commands.add('addBlocks', {
     run: () => {
       selectJsonFiles().then((pathFiles) => {
-        pathFiles.forEach(file => addBlocksByFilePath(editor, file))
+        if (pathFiles && Array.isArray(pathFiles)) {
+          pathFiles.forEach(file => addBlocksByFilePath(editor, file))
+        }
       })
     }
   })
