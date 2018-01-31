@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {
+      "id": "header",
+      "opts": {
+        "label": "Header",
+        "category": "Basic",
+        "content": {
+          "content": "Insert your header"
+        }
+      }
+    }
+  ]
+}
