@@ -9,3 +9,9 @@ export function readFileAndParse(filePath) {
 
   return JSON.parse(fileString)
 }
+
+export function writeFileSync(filePath, content) {
+  const contentString = JSON.stringify(content)
+
+  return fs.writeFileSync(filePath, contentString)
+}

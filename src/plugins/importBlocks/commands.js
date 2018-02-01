@@ -8,18 +8,35 @@ function addBlock(editor, block) {
   if (id && opts) BlockManager.add(id, opts)
 }
 
+function addBlocks(editor, blocks) {
+  blocks.forEach(block => addBlock(editor, block))
+}
+
 function addBlocksByFilePath(editor, filePath) {
   if (filePath) {
     const blocksParsed = readFileAndParse(filePath)
+    const { blocks } = blocksParsed
   
-    if (blocksParsed.hasOwnProperty('blocks')) {
-      blocksParsed.blocks.forEach(block => addBlock(editor, block))
+    if (blocks) {
+      addBlocks(editor, blocks)
     }
   }
 }
 
 export default function (editor, config = {}) {
   const { Commands } = editor
+
+  Commands.add('addBlock', {
+    run(block) {
+      addBlock(editor, block)
+    }
+  })
+
+  Commands.add('addBlocks', {
+    run(blocks) {
+      addBlocks(blocks)
+    }
+  })
 
   Commands.add('importBlocks', {
     run() {

@@ -13,10 +13,23 @@ const dialogShowFile = (filters, isMultiple = true) => {
   })
 }
 
+const dialogSaveFile = (filters, defaultPath = './') => {
+  return new Promise((resolve) => {
+    dialog.showSaveDialog({
+      defaultPath,
+      filters
+    }, resolve)
+  })
+}
+
 export function selectFile(filters = []) {
   return dialogShowFile(filters, false)
 }
 
 export function selectFiles(filters = []) {
   return dialogShowFile(filters)
+}
+
+export function saveFile(filters = []) {
+  return dialogSaveFile(filters)
 }

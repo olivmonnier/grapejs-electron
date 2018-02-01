@@ -5,8 +5,17 @@
       "opts": {
         "label": "Header",
         "category": "Basic",
-        "content": {
-          "content": "Insert your header"
+        "content": "<h1>Insert your header</h1>"
+      }
+    },
+    {
+      "id": "paragraph",
+      "opts": {
+        "label": "Paragraph",
+        "category": "Basic",
+        "content": "<p>Lorem ipsum</p>",
+        "attributes": {
+          "title": "add paragraph"
         }
       }
     }
