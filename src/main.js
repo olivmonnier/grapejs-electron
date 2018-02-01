@@ -12,7 +12,7 @@ editor.Panels.addPanel({
     {
       id: 'importHtmlButton',
       className: 'fa fa-html5',
-      command: 'importHtml',
+      command: () => editor.runCommand('importHtml'),
       attributes: {
         title: 'Import HTML'
       }
@@ -20,7 +20,7 @@ editor.Panels.addPanel({
     {
       id: 'importBlocksButton',
       className: 'fa fa-list-alt',
-      command: 'importBlocks',
+      command: () => editor.runCommand('importBlocks'),
       attributes: {
         title: 'Import Blocks'
       }
@@ -28,7 +28,7 @@ editor.Panels.addPanel({
     {
       id: 'exportProjectButton',
       className: 'fa fa-floppy-o',
-      command: 'exportProject',
+      command: () => editor.runCommand('exportProject'),
       attributes: {
         title: 'Export Project'
       }
