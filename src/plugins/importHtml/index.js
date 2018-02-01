@@ -1,7 +1,7 @@
 import grapesjs from 'grapesjs'
 import loadCommands from './commands'
 
-export default grapesjs.plugins.add('importBlocksPlugin', (editor, opts = {}) => {
+export default grapesjs.plugins.add('importHtmlPlugin', (editor, opts = {}) => {
   const defaultOpts = {
     // Defaults
   }

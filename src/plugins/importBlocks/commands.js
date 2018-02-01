@@ -1,5 +1,5 @@
-import selectFiles from '../../utils/selectFiles'
-import readFileAndParse from '../../utils/readFileAndParse'
+import { selectFiles } from '../../utils/dialog'
+import { readFileAndParse } from '../../utils/file'
 
 function addBlock(editor, block) {
   const { BlockManager } = editor
@@ -9,25 +9,24 @@ function addBlock(editor, block) {
 }
 
 function addBlocksByFilePath(editor, filePath) {
-  const blocksParsed = readFileAndParse(filePath)
-
-  if (blocksParsed.hasOwnProperty('blocks')) {
-    blocksParsed.blocks.forEach(block => addBlock(editor, block))
+  if (filePath) {
+    const blocksParsed = readFileAndParse(filePath)
+  
+    if (blocksParsed.hasOwnProperty('blocks')) {
+      blocksParsed.blocks.forEach(block => addBlock(editor, block))
+    }
   }
 }
 
-export default function(editor, config = {}) {
+export default function (editor, config = {}) {
   const { Commands } = editor
 
   Commands.add('importBlocks', {
-    run: () => {
+    run() {
       selectFiles([
         { name: 'JSON', extensions: ['json'] }
-      ]).then((pathFiles) => {
-        if (pathFiles && Array.isArray(pathFiles)) {
-          pathFiles.forEach(file => addBlocksByFilePath(editor, file))
-        }
-      })
+      ]).then((filesPath) => filesPath && filesPath
+        .forEach(file => addBlocksByFilePath(editor, file)))
     }
   })
 }
