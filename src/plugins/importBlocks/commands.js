@@ -1,4 +1,4 @@
-import selectJsonFiles from '../../utils/selectJsonFiles'
+import selectFiles from '../../utils/selectFiles'
 import readFileAndParse from '../../utils/readFileAndParse'
 
 function addBlock(editor, block) {
@@ -9,23 +9,21 @@ function addBlock(editor, block) {
 }
 
 function addBlocksByFilePath(editor, filePath) {
-  if (!filePath) return
-
   const blocksParsed = readFileAndParse(filePath)
 
   if (blocksParsed.hasOwnProperty('blocks')) {
     blocksParsed.blocks.forEach(block => addBlock(editor, block))
-  } else {
-    addBlock(editor, blocksParsed)
   }
 }
 
 export default function(editor, config = {}) {
   const { Commands } = editor
 
-  Commands.add('addBlocks', {
+  Commands.add('importBlocks', {
     run: () => {
-      selectJsonFiles().then((pathFiles) => {
+      selectFiles([
+        { name: 'JSON', extensions: ['json'] }
+      ]).then((pathFiles) => {
         if (pathFiles && Array.isArray(pathFiles)) {
           pathFiles.forEach(file => addBlocksByFilePath(editor, file))
         }

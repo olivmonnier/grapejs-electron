@@ -6,11 +6,11 @@ export default function(editor, config = {}) {
     visible: true,
     buttons: [
       {
-        id: 'addBlocksButton',
+        id: 'importBlocksButton',
         className: 'fa fa-list-alt',
-        command: () => editor.runCommand('addBlocks'),
+        command: () => editor.runCommand('importBlocks'),
         attributes: {
-          title: 'Add Blocks'
+          title: 'Import Blocks'
         }
       }
     ]
