@@ -10,6 +10,7 @@ const formatBlock = (block) => {
     opts: {
       label,
       content,
+      category: category.id,
       attributes: attributes.attributes
     }
   }
@@ -28,7 +29,7 @@ export default function (editor, config = {}) {
 
       saveFile([
         { name: 'JSON', extensions: ['json'] }
-      ]).then(filePath => writeFileSync(filePath, {
+      ]).then(filePath => filePath && writeFileSync(filePath, {
         html, css, blocks
       }))
     }

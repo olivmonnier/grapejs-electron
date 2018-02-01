@@ -34,7 +34,7 @@ export default function (editor, config = {}) {
 
   Commands.add('addBlocks', {
     run(blocks) {
-      addBlocks(blocks)
+      addBlocks(editor, blocks)
     }
   })
 
