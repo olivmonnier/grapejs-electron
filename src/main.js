@@ -58,3 +58,15 @@ editor.Panels.addPanel({
     }
   ]
 })
+editor.Panels.addButton('options', [
+  {
+    id: 'undo',
+    className: 'fa fa-undo',
+    command: () => editor.runCommand('core:undo')
+  },
+  {
+    id: 'redo',
+    className: 'fa fa-repeat',
+    command: () => editor.runCommand('core:redo')
+  }
+])
