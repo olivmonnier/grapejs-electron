@@ -4,7 +4,7 @@ html, body {
 }
 
 #gjs-pn-devices-c {
-  left: calc(50% - 150px);
+  left: calc(50% - 200px);
   padding: 4px;
 }
 .gjs-pn-panel#gjs-pn-options {
