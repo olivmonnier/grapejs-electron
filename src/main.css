@@ -7,3 +7,9 @@ html, body {
   left: calc(50% - 150px);
   padding: 4px;
 }
+.gjs-pn-panel#gjs-pn-options {
+  right: 300px;
+}
+#gjs-pn-views-container, #gjs-pn-views {
+  min-width: 250px;
+}
