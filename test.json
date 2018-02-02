@@ -18,6 +18,52 @@
           "title": "add paragraph"
         }
       }
+    },
+    {
+      "id": "input",
+      "opts": {
+        "label": "Input",
+        "category": "Basic",
+        "content": "<input type=\"text\" />",
+        "attributes": {
+          "title": "add input"
+        }
+      }
+    },
+    {
+      "id": "form",
+      "opts": {
+        "label": "Form",
+        "category": "Basic",
+        "content": "<form></form>",
+        "attributes": {
+          "title": "add form"
+        }
+      }
+    }
+  ],
+  "components": [
+    {
+      "id": "input",
+      "model": "default",
+      "defaults": {
+        "draggable": "form, form *",
+        "droppable": false,
+        "traits": ["name", "placeholder", {
+          "type": "select",
+          "label": "Type",
+          "name": "type",
+          "options": [
+            { "value": "text", "name": "Text" },
+            { "value": "email", "name": "Email" },
+            { "value": "password", "name": "Password" },
+            { "value": "number", "name": "Number" }
+          ]
+        }]
+      },
+      "isComponent": {
+        "tagName": "INPUT"
+      } 
     }
   ]
 }

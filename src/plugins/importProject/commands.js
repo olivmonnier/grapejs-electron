@@ -4,8 +4,9 @@ import { readFileAndParse } from '../../utils/file'
 const importProject = (editor, filePath) => {
   const { Commands } = editor
   const projectParsed = readFileAndParse(filePath)
-  const { html, css, blocks } = projectParsed
+  const { html, css, blocks, components } = projectParsed
 
+  if (components) Commands.get('addComponents').run(components)
   if (blocks) Commands.get('addBlocks').run(blocks)
   if (html) editor.setComponents(html)
   if (css) editor.setStyle(css)

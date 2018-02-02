@@ -47,6 +47,14 @@ editor.Panels.addPanel({
       attributes: {
         title: 'Import Blocks'
       }
+    },
+    {
+      id: 'importComponentsButton',
+      className: 'fa fa-cubes',
+      command: () => editor.runCommand('importComponents'),
+      attributes: {
+        title: 'Import Components'
+      }
     }
   ]
 })
