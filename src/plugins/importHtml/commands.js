@@ -15,7 +15,7 @@ export default function (editor, config = {}) {
   Commands.add('importHtml', {
     run() {
       selectFile([
-        { name: 'Html', extensions: ['html'] }
+        { name: 'Hypertext Markup Language', extensions: ['html'] }
       ]).then(filePath => filePath && importHtmlInCanvas(editor, filePath[0]))
     }
   })

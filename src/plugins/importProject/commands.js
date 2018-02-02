@@ -17,7 +17,7 @@ export default function (editor, config = {}) {
   Commands.add('importProject', {
     run() {
       selectFile([
-        { name: 'JSON', extensions: ['json'] }
+        { name: 'JavaScript Object Notation', extensions: ['json'] }
       ]).then(filePath => filePath && importProject(editor, filePath[0]))
     }
   })

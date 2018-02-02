@@ -28,7 +28,7 @@ export default function (editor, config = {}) {
       blocks = blocks.models.map(formatBlock)
 
       saveFile([
-        { name: 'JSON', extensions: ['json'] }
+        { name: 'JavaScript Object Notation', extensions: ['json'] }
       ]).then(filePath => filePath && writeFileSync(filePath, {
         html, css, blocks
       }))

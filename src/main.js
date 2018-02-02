@@ -1,9 +1,7 @@
 import grapesjs from 'grapesjs'
-import './plugins/exportProject'
-import './plugins/importBlocks'
-import './plugins/importHtml'
-import './plugins/importProject'
+import './plugins'
 import config from './config'
+
 const editor = grapesjs.init(config)
 
 editor.Panels.addPanel({
@@ -32,6 +30,14 @@ editor.Panels.addPanel({
       command: () => editor.runCommand('importHtml'),
       attributes: {
         title: 'Import HTML'
+      }
+    },
+    {
+      id: 'importCssButton',
+      className: 'fa fa-css3',
+      command: () => editor.runCommand('importCss'),
+      attributes: {
+        title: 'Import Css'
       }
     },
     {

@@ -41,7 +41,7 @@ export default function (editor, config = {}) {
   Commands.add('importBlocks', {
     run() {
       selectFiles([
-        { name: 'JSON', extensions: ['json'] }
+        { name: 'JavaScript Object Notation', extensions: ['json'] }
       ]).then((filesPath) => filesPath && filesPath
         .forEach(file => addBlocksByFilePath(editor, file)))
     }
