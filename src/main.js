@@ -3,6 +3,7 @@ import './plugins'
 import config from './config'
 
 const editor = grapesjs.init(config)
+const txtConfirm = 'Are you sure ?'
 
 editor.Panels.addPanel({
   id: 'files',
@@ -68,5 +69,10 @@ editor.Panels.addButton('options', [
     id: 'redo',
     className: 'fa fa-repeat',
     command: () => editor.runCommand('core:redo')
+  }, 
+  {
+    id: 'clear',
+    className: 'fa fa-trash',
+    command: () => confirm(txtConfirm) && editor.runCommand('core:canvas-clear')
   }
 ])
