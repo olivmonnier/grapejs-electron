@@ -2,5 +2,5 @@ export default {
   container: '#gjs',
   fromElement: true,
   height: '100%',
-  plugins: ['exportProjectPlugin', 'importBlocksPlugin', 'importComponentsPlugin', 'importCssPlugin', 'importHtmlPlugin', 'importProjectPlugin']
+  plugins: ['customHtmlPlugin', 'exportProjectPlugin', 'importBlocksPlugin', 'importComponentsPlugin', 'importCssPlugin', 'importHtmlPlugin', 'importProjectPlugin']
 }

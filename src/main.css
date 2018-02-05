@@ -13,3 +13,10 @@ html, body {
 #gjs-pn-views-container, #gjs-pn-views {
   min-width: 250px;
 }
+.gjs-trt-trait {
+  display: block;
+}
+.gjs-trt-trait .gjs-label, .gjs-trt-trait .gjs-field {
+  display: block;
+  width: 100%;
+}
