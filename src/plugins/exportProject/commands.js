@@ -22,6 +22,7 @@ export default function (editor, config = {}) {
   Commands.add('exportProject', {
     run() {
       let blocks = editor.BlockManager.getAll()
+      const components = editor.runCommand('getComponents')
       const html = editor.getHtml()
       const css = editor.getCss()
 
@@ -30,7 +31,7 @@ export default function (editor, config = {}) {
       saveFile([
         { name: 'JavaScript Object Notation', extensions: ['json'] }
       ]).then(filePath => filePath && writeFileSync(filePath, {
-        html, css, blocks
+        html, css, blocks, components
       }))
     }
   })

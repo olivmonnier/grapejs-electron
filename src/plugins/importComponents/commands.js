@@ -1,6 +1,16 @@
 import { selectFiles, selectFile } from '../../utils/dialog'
 import { readFileAndParse } from '../../utils/file'
 
+const COMPONENTS_TYPES = {}
+
+function storeComponentType(component) {
+  const { id, model, defaults, isComponent } = component
+
+  COMPONENTS_TYPES[id] = {
+    model, defaults, isComponent
+  }
+}
+
 function addComponent(editor, component) {
   const { DomComponents } = editor
   const { id, model, defaults, isComponent } = component
@@ -8,6 +18,8 @@ function addComponent(editor, component) {
   if (id && model && defaults && isComponent) {
     const modelType = DomComponents.getType(model).model
     const viewType = DomComponents.getType(model).view
+
+    storeComponentType(component)
 
     DomComponents.addType(id, {
       model: modelType.extend({
@@ -49,6 +61,26 @@ function addComponentsByFilePath(editor, filePath) {
   }
 }
 
+function getComponents() {
+  let components = []
+
+  if (COMPONENTS_TYPES && COMPONENTS_TYPES !== {}) {
+    for (let key in COMPONENTS_TYPES) {
+      const comp = COMPONENTS_TYPES[key]
+      const { defaults, model, isComponent } = comp
+
+      components.push({
+        id: key,
+        model,
+        defaults,
+        isComponent
+      })
+    }
+  }
+
+  return components
+}
+
 export default function (editor, config = {}) {
   const { Commands } = editor
 
@@ -61,6 +93,12 @@ export default function (editor, config = {}) {
   Commands.add('addComponents', {
     run(components) {
       addComponents(editor, components)
+    }
+  })
+
+  Commands.add('getComponents', {
+    run() {    
+      return getComponents()
     }
   })
 
