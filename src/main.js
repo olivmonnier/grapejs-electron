@@ -1,6 +1,7 @@
 import grapesjs from 'grapesjs'
 import './plugins'
 import config from './config'
+import Menu from './menu'
 
 const editor = grapesjs.init(config)
 const txtConfirm = 'Are you sure ?'
@@ -76,3 +77,5 @@ editor.Panels.addButton('options', [
     command: () => confirm(txtConfirm) && editor.runCommand('core:canvas-clear')
   }
 ])
+
+Menu(editor)
