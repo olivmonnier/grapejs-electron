@@ -50,7 +50,11 @@ export default function (editor) {
       {
         label: 'Clear',
         click() { confirm(txtConfirm) && editor.runCommand('core:canvas-clear') }
-      }
+      },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' }
     ]
   }))
   menu.append(new MenuItem({
@@ -59,6 +63,10 @@ export default function (editor) {
       { role: 'reload' },
       { role: 'toggledevtools' },
       { type: 'separator' },
+      { 
+        label: 'Preview',
+        click() { editor.runCommand('preview') }
+      },
       { role: 'togglefullscreen' }
     ]
   }))
