@@ -8,6 +8,7 @@ export default (editor, config = {}) => {
       defaults: Object.assign({}, model.prototype.defaults, {
         'custom-name': 'Custom HTML',
         droppable: true,
+        draggable: true,
         traits: [
           {
             type: 'content',

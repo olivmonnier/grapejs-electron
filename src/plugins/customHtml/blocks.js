@@ -4,7 +4,12 @@ export default (editor, config = {}) => {
   BlockManager.add('custom', {
     label: 'Custom HTML',
     category: 'Extras',
-    attributes: { class: 'fa fa-code' },
-    content: `<div data-type="custom">${config.contentBlock}</div>`
+    content: {
+      type: 'custom',
+    },
+    attributes: {
+      class: 'fa fa-code',
+      'data-type': 'custom',
+    }
   })
 }
