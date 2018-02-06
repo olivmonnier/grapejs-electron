@@ -19,17 +19,19 @@ export default (editor, config = {}) => {
       })
     }, {
       isComponent(el) {
-        if (el.dataset.type && el.dataset.type === 'custom') {
+        if (el.dataset && el.dataset.type && el.dataset.type === 'custom') {
           return { type: 'custom' }
         }
       }
     }),
     view: view.extend({
+      events: {
+        'click': function() {
+          editor.select(this.el)
+        }
+      },
       init() {
         this.listenTo(this.model, 'change:content', this.updateContent)
-      },
-      updateContent() {
-        this.el.innerHTML = this.model.get('content')
       }
     })
   })

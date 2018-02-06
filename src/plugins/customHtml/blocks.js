@@ -6,6 +6,7 @@ export default (editor, config = {}) => {
     category: 'Extras',
     content: {
       type: 'custom',
+      content: 'Add some HTMLElement'
     },
     attributes: {
       class: 'fa fa-code',
