@@ -32,7 +32,16 @@ export default (editor, config = {}) => {
       },
       init() {
         this.listenTo(this.model, 'change:content', this.updateContent)
-      }
+      },
+      // updateContent() {
+      //   const content = this.model.get('content')
+      //   const comps = this.model.components()
+
+      //   if (comps) {
+      //     comps.add(content)
+      //   }
+      //   this.el.innerHTML = this.model.get('content')
+      // }
     })
   })
 }

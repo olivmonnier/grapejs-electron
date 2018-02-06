@@ -3,6 +3,7 @@ import { clearTimeout } from "timers";
 export default (editor, config = {}) => {
   const { TraitManager } = editor
   const codeViewer = editor.CodeManager.getViewer('CodeMirror').clone()
+
   codeViewer.set({
     codeName: 'htmlmixed',
     theme: 'hopscotch',
