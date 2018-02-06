@@ -2,6 +2,10 @@ html, body {
   margin: 0;
   height: 100%;
 }
+.CodeMirror {
+  text-align: left;
+  font-size: 12px;
+}
 
 #gjs-pn-devices-c {
   left: calc(50% - 200px);

@@ -3,7 +3,7 @@ export default (editor, config = {}) => {
   const defaultType = DomComponents.getType('default')
   const { model, view } = defaultType
 
-  DomComponents.addType('template', {
+  DomComponents.addType('custom', {
     model: model.extend({
       defaults: Object.assign({}, model.prototype.defaults, {
         'custom-name': 'Custom HTML',
@@ -18,8 +18,8 @@ export default (editor, config = {}) => {
       })
     }, {
       isComponent(el) {
-        if (el.dataset.type && el.dataset.type === 'template') {
-          return { type: 'template' }
+        if (el.dataset.type && el.dataset.type === 'custom') {
+          return { type: 'custom' }
         }
       }
     }),
