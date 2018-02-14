@@ -24,3 +24,22 @@ html, body {
   display: block;
   width: 100%;
 }
+
+/* Theming */
+.gjs-one-bg {
+  background-color: #242A3B; 
+}
+
+.gjs-two-color {
+  color: #9ca8bb;
+}
+
+.gjs-three-bg {
+  background-color: #1E8FE1;
+  color: white;
+}
+
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #1E8FE1;
+}
