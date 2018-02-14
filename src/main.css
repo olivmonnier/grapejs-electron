@@ -7,14 +7,14 @@ html, body {
   font-size: 12px;
 }
 
-#gjs-pn-devices-c {
+.gjs-pn-devices-c {
   left: calc(50% - 200px);
   padding: 4px;
 }
-.gjs-pn-panel#gjs-pn-options {
+.gjs-pn-panel.gjs-pn-options {
   right: 300px;
 }
-#gjs-pn-views-container, #gjs-pn-views {
+.gjs-pn-views-container, .gjs-pn-views {
   min-width: 250px;
 }
 .gjs-trt-trait {

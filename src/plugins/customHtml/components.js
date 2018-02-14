@@ -1,38 +1,27 @@
-export default (editor, config = {}) => {
+export default function (editor, config = {}) {
   const { DomComponents } = editor
-  const defaultType = DomComponents.getType('default')
-  const { model, view } = defaultType
+  const defaultType = editor.DomComponents.getType('default')
+  const initToolbar = defaultType.model.prototype.initToolbar
 
-  DomComponents.addType('custom', {
-    model: model.extend({
-      defaults: Object.assign({}, model.prototype.defaults, {
-        'custom-name': 'Custom HTML',
-        droppable: true,
-        draggable: true,
-        traits: [
-          {
-            type: 'content',
-            name: 'content',
-            label: 'HTML'
-          }
-        ]
-      })
+  DomComponents.addType('html-code', {
+    model: defaultType.model.extend({
+      initToolbar(args) {
+        initToolbar.apply(this, args)
+
+        const toolbar = this.get('toolbar')
+        toolbar.push({
+          attributes: { 'class': 'fa fa-code' },
+          command: 'open-html-code-editor'
+        })
+        this.set('toolbar', toolbar)
+      }
     }, {
       isComponent(el) {
-        if (el.dataset && el.dataset.type && el.dataset.type === 'custom') {
-          return { type: 'custom' }
+        if (typeof el.hasAttribute == 'function' && el.hasAttribute('data-html-code')) {
+          return { type: 'html-code' }
         }
       }
     }),
-    view: view.extend({
-      events: {
-        'click': function() {
-          editor.select(this.model)
-        }
-      },
-      init() {
-        this.listenTo(this.model, 'change:content', this.updateContent)
-      }
-    })
+    view: defaultType.view
   })
 }

@@ -49,7 +49,7 @@
   "dependencies": {
     "electron-compile": "^6.4.2",
     "electron-squirrel-startup": "^1.0.0",
-    "grapesjs": "^0.13.8"
+    "grapesjs": "^0.14.5"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
