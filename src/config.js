@@ -147,6 +147,21 @@ export default {
             className: 'fa fa-code',
             command: 'export-template',
             attributes: { title: 'View code' }
+          },
+          {
+            id: 'undo',
+            className: 'fa fa-undo',
+            command: () => editor.runCommand('core:undo')
+          },
+          {
+            id: 'redo',
+            className: 'fa fa-repeat',
+            command: () => editor.runCommand('core:redo')
+          },
+          {
+            id: 'clear',
+            className: 'fa fa-trash',
+            command: () => confirm('Are you sure to clean document ?') && editor.runCommand('core:canvas-clear')
           }
         ]
       }

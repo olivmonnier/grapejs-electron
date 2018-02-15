@@ -15,6 +15,9 @@ html, body {
 .gjs-pn-options {
   right: 0;
 }
+.gjs-pn-views-container {
+  padding-top: 0;
+}
 /***********/
 
 /* Traits */
