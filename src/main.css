@@ -12,17 +12,10 @@ html, body {
 .gjs-pn-panel {
   position: relative;
 }
-/* .gjs-pn-devices-c {
-  left: calc(50% - 200px);
-  padding: 4px;
+.gjs-pn-options {
+  right: 0;
 }
-.gjs-pn-panel.gjs-pn-options {
-  right: 300px;
-}
-.gjs-pn-views-container, .gjs-pn-views {
-  min-width: 250px;
-} */
-/***************/
+/***********/
 
 /* Traits */
 .gjs-trt-trait {
@@ -39,11 +32,14 @@ html, body {
 }
 
 .actions-bar {
-  height: 40px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .row {
-  height: calc(100% - 40px);
+  height: calc(100% - 45px);
   display: flex;
   justify-content: flex-start;
   align-items: stretch;

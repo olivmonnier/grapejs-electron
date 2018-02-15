@@ -57,6 +57,98 @@ export default {
       {
         id: 'views-container',
         el: '#views-container'
+      },
+      {
+        id: 'files',
+        el: '#file-actions-container',
+        buttons: [
+          {
+            id: 'importProjectButton',
+            className: 'fa fa-file-code-o',
+            command: () => editor.runCommand('importProject'),
+            attributes: {
+              title: 'Open Project'
+            }
+          },
+          {
+            id: 'exportProjectButton',
+            className: 'fa fa-floppy-o',
+            command: () => editor.runCommand('exportProject'),
+            attributes: {
+              title: 'Export Project'
+            }
+          },
+          {
+            id: 'importHtmlButton',
+            className: 'fa fa-html5',
+            command: () => editor.runCommand('importHtml'),
+            attributes: {
+              title: 'Import HTML'
+            }
+          },
+          {
+            id: 'importCssButton',
+            className: 'fa fa-css3',
+            command: () => editor.runCommand('importCss'),
+            attributes: {
+              title: 'Import Css'
+            }
+          },
+          {
+            id: 'importBlocksButton',
+            className: 'fa fa-list-alt',
+            command: () => editor.runCommand('importBlocks'),
+            attributes: {
+              title: 'Import Blocks'
+            }
+          },
+          {
+            id: 'importComponentsButton',
+            className: 'fa fa-cubes',
+            command: () => editor.runCommand('importComponents'),
+            attributes: {
+              title: 'Import Components'
+            }
+          }
+        ]
+      },
+      {
+        id: 'devices-c',
+        el: '#devices-container'
+      },
+      {
+        id: 'options',
+        el: '#options-container',
+        buttons: [
+          {
+            active: true,
+            id: 'sw-visibility',
+            className: 'fa fa-square-o',
+            command: 'sw-visibility',
+            context: 'sw-visibility',
+            attributes: { title: 'View components' }
+          },
+          {
+            id: 'preview',
+            className: 'fa fa-eye',
+            command: 'preview',
+            context: 'preview',
+            attributes: { title: 'Preview' }
+          },
+          {
+            id: 'fullscreen',
+            className: 'fa fa-arrows-alt',
+            command: 'fullscreen',
+            context: 'fullscreen',
+            attributes: { title: 'Fullscreen' }
+          },
+          {
+            id: 'export-template',
+            className: 'fa fa-code',
+            command: 'export-template',
+            attributes: { title: 'View code' }
+          }
+        ]
       }
     ]
   }
