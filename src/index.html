@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="./main.css"/>
   </head>
   <body>
-    <div id="gjs" style="height:0px; overflow:hidden;"></div>
+    <div class="container">
+      <div class="actions-bar gjs-one-bg">
+        <div id="file-actions-container"></div>
+        <div id="devices-container"></div>
+        <div id="options-container"></div>
+      </div>
+
+      <div class="row">
+        <div class="column left">
+          <div id="layers-container"></div>
+        </div>
+
+        <div class="column editor-clm">
+          <div id="gjs"></div>
+        </div>
+
+        <div class="column right">
+          <div id="buttons-view"></div>
+
+          <div id="views-container"></div>
+        </div>
+      </div>
+    </div>
+    
     <script src="main.js"></script>
   </body>
 </html>
