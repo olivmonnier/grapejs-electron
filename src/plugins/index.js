@@ -1,4 +1,5 @@
 export * from './customHtml'
+export * from './editHtml'
 export * from './exportProject'
 export * from './importBlocks'
 export * from './importComponents'

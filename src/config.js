@@ -2,7 +2,7 @@ export default {
   container: '#gjs',
   fromElement: true,
   height: '100%',
-  plugins: ['customHtmlPlugin', 'exportProjectPlugin', 'importBlocksPlugin', 'importComponentsPlugin', 'importCssPlugin', 'importHtmlPlugin', 'importProjectPlugin'],
+  plugins: ['customHtmlPlugin', 'editHtmlPlugin','exportProjectPlugin', 'importBlocksPlugin', 'importComponentsPlugin', 'importCssPlugin', 'importHtmlPlugin', 'importProjectPlugin'],
   layerManager: {
     appendTo: '#layers-container'
   },
@@ -147,6 +147,12 @@ export default {
             className: 'fa fa-code',
             command: 'export-template',
             attributes: { title: 'View code' }
+          },
+          {
+            id: 'edit-html',
+            className: 'fa fa-pencil-square-o',
+            command: () => editor.runCommand('edit-html'),
+            attributes: { title: 'Edit document' }
           },
           {
             id: 'undo',
