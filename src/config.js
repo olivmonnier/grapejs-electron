@@ -69,7 +69,8 @@ export default {
             className: 'fa fa-file-code-o',
             command: () => editor.runCommand('importProject'),
             attributes: {
-              title: 'Open Project'
+              'data-tooltip': 'Open Project',
+              'data-tooltip-pos': 'bottom'
             }
           },
           {
@@ -77,7 +78,8 @@ export default {
             className: 'fa fa-floppy-o',
             command: () => editor.runCommand('exportProject'),
             attributes: {
-              title: 'Export Project'
+              'data-tooltip': 'Export Project',
+              'data-tooltip-pos': 'bottom'
             }
           },
           {
@@ -85,7 +87,8 @@ export default {
             className: 'fa fa-html5',
             command: () => editor.runCommand('importHtml'),
             attributes: {
-              title: 'Import HTML'
+              'data-tooltip': 'Import HTML',
+              'data-tooltip-pos': 'bottom'
             }
           },
           {
@@ -93,7 +96,8 @@ export default {
             className: 'fa fa-css3',
             command: () => editor.runCommand('importCss'),
             attributes: {
-              title: 'Import Css'
+              'data-tooltip': 'Import Css',
+              'data-tooltip-pos': 'bottom'
             }
           },
           {
@@ -101,7 +105,8 @@ export default {
             className: 'fa fa-list-alt',
             command: () => editor.runCommand('importBlocks'),
             attributes: {
-              title: 'Import Blocks'
+              'data-tooltip': 'Import Blocks',
+              'data-tooltip-pos': 'bottom'
             }
           },
           {
@@ -109,7 +114,8 @@ export default {
             className: 'fa fa-cubes',
             command: () => editor.runCommand('importComponents'),
             attributes: {
-              title: 'Import Components'
+              'data-tooltip': 'Import Components',
+              'data-tooltip-pos': 'bottom'
             }
           }
         ]
@@ -126,22 +132,37 @@ export default {
             id: 'edit-html',
             className: 'fa fa-pencil-square-o',
             command: () => editor.runCommand('edit-html'),
-            attributes: { title: 'Edit document' }
+            attributes: { 
+              'data-tooltip': 'Edit document',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             id: 'undo',
             className: 'fa fa-undo',
-            command: () => editor.runCommand('core:undo')
+            command: () => editor.runCommand('core:undo'),
+            attributes: {
+              'data-tooltip': 'Undo',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             id: 'redo',
             className: 'fa fa-repeat',
-            command: () => editor.runCommand('core:redo')
+            command: () => editor.runCommand('core:redo'),
+            attributes: {
+              'data-tooltip': 'Redo',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             id: 'clear',
             className: 'fa fa-trash',
-            command: () => confirm('Are you sure to clean the canvas?') && editor.runCommand('core:canvas-clear')
+            command: () => confirm('Are you sure to clean the canvas?') && editor.runCommand('core:canvas-clear'),
+            attributes: {
+              'data-tooltip': 'Clear',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             active: true,
@@ -149,27 +170,39 @@ export default {
             className: 'fa fa-square-o',
             command: 'sw-visibility',
             context: 'sw-visibility',
-            attributes: { title: 'View components' }
+            attributes: { 
+              'data-tooltip': 'View components',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             id: 'preview',
             className: 'fa fa-eye',
             command: 'preview',
             context: 'preview',
-            attributes: { title: 'Preview' }
+            attributes: { 
+              'data-tooltip': 'Preview',
+              'data-tooltip-pos': 'bottom'
+            }
           },
           {
             id: 'fullscreen',
             className: 'fa fa-arrows-alt',
             command: 'fullscreen',
             context: 'fullscreen',
-            attributes: { title: 'Fullscreen' }
+            attributes: { 
+              'data-tooltip': 'Fullscreen',
+              'data-tooltip-pos': 'bottom' 
+            }
           },
           {
             id: 'export-template',
             className: 'fa fa-code',
             command: 'export-template',
-            attributes: { title: 'View code' }
+            attributes: {
+              'data-tooltip': 'View code',
+              'data-tooltip-pos': 'bottom' 
+            }
           }
         ]
       }
