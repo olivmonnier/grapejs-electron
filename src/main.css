@@ -40,11 +40,12 @@ html, body {
   height: 45px;
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .actions-bar > * {
   z-index: 4;
+  background-color: transparent !important;
 }
 
 .row {
@@ -89,9 +90,16 @@ html, body {
     top: 0;
 }
 
+.gjs-pn-btn {
+  padding: 4px 8px;
+}
+
 /* Theming */
 .gjs-one-bg {
   background-color: #242A3B; 
+}
+.gjs-one-bg-darker {
+  background-color: #1d212f;
 }
 
 .gjs-two-color {

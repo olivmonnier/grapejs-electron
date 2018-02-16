@@ -12,7 +12,7 @@ export default (editor, config) => {
   // Init import button
   const btnImp = document.createElement('button')
   btnImp.type = 'button'
-  btnImp.innerHTML = 'Add'
+  btnImp.innerHTML = 'Save'
   btnImp.className = `${pfx}btn-prim ${pfx}btn-import`
   btnImp.onclick = e => {
     editor.setComponents(viewerEditor.getValue().trim())
