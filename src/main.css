@@ -5,6 +5,7 @@ html, body {
   font-size: .90rem;
 }
 .CodeMirror {
+  height: 400px;
   text-align: left;
   font-size: 12px;
 }
